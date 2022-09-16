@@ -9,7 +9,7 @@ spec:
   - name: foo-app
     image: hashicorp/http-echo:0.2.3
     args:
-    - "-text=foo"
+    - "-text=slice1"
 ---
 kind: Service
 apiVersion: v1
@@ -55,7 +55,7 @@ spec:
   - http:
       paths:
       - pathType: Prefix
-        path: "/foo"
+        path: "/slice"
         backend:
           service:
             name: foo-service
